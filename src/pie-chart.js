@@ -71,8 +71,8 @@ class PieChart extends PureComponent {
 
         const arcs = data.map(item => {
             const arc = shape.arc()
-                .outerRadius(_outerRadius)
-                .innerRadius(_innerRadius)
+                .outerRadius(item.outerRadius || _outerRadius)
+                .innerRadius(item.innerRadius || _innerRadius)
                 .padAngle(padAngle) // Angle between sections
 
             item.arc && Object.entries(item.arc)
